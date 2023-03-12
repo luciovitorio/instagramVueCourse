@@ -1,10 +1,13 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-import Container from './ContainerCP.vue'
-
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+
+import Container from './ContainerCP.vue'
+import AuthModalCP from './AuthModalCP.vue'
 
 const searchUserName = ref('')
+const isAuthenticated = ref(false)
+
 const onSearch = () => {}
 </script>
 
@@ -21,9 +24,13 @@ const onSearch = () => {}
             @search="onSearch"
           />
         </div>
-        <div class="left-content">
-          <a-button type="primary">Signup</a-button>
-          <a-button type="primary">Login</a-button>
+        <div class="left-content" v-if="!isAuthenticated">
+          <AuthModalCP :isLogin="false" />
+          <AuthModalCP :isLogin="true" />
+        </div>
+        <div class="left-content" v-else>
+          <a-button type="primary">Profile</a-button>
+          <a-button type="primary">Logout</a-button>
         </div>
       </div>
     </Container>
@@ -45,7 +52,12 @@ const onSearch = () => {}
   margin-right: 1rem;
 }
 
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
 .left-content button {
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 </style>
