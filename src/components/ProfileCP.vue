@@ -1,11 +1,19 @@
 <script setup>
 import ContainerCP from './ContainerCP.vue'
+import UserBarCP from './UserBarCP.vue'
 </script>
 
 <template>
   <ContainerCP>
     <div class="profile-container">
-      <h1>USERBAR</h1>
+      <UserBarCP
+        username="Username01"
+        :userInfo="{
+          posts: 4,
+          followers: 100,
+          following: 342
+        }"
+      />
       <h1>IMAGEGALLERY</h1>
     </div>
   </ContainerCP>
@@ -13,9 +21,6 @@ import ContainerCP from './ContainerCP.vue'
 
 <style scoped>
 .profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px 0;
 }
 </style>
