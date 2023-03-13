@@ -1,5 +1,7 @@
-<script setup></script>
+<script setup>
+import TimelineCP from '../components/TimelineCP.vue'
+</script>
 
 <template>
-  <main></main>
+  <TimelineCP />
 </template>
