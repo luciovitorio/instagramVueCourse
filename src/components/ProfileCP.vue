@@ -1,5 +1,6 @@
 <script setup>
 import ContainerCP from './ContainerCP.vue'
+import ImageGalleryCP from './ImageGalleryCP.vue'
 import UserBarCP from './UserBarCP.vue'
 </script>
 
@@ -14,7 +15,26 @@ import UserBarCP from './UserBarCP.vue'
           following: 342
         }"
       />
-      <h1>IMAGEGALLERY</h1>
+      <ImageGalleryCP
+        :posts="[
+          {
+            id: 1,
+            image: 'https://i.pravatar.cc/150?img=5'
+          },
+          {
+            id: 1,
+            image: 'https://i.pravatar.cc/150?img=5'
+          },
+          {
+            id: 1,
+            image: 'https://i.pravatar.cc/150?img=5'
+          },
+          {
+            id: 1,
+            image: 'https://i.pravatar.cc/150?img=5'
+          }
+        ]"
+      />
     </div>
   </ContainerCP>
 </template>
